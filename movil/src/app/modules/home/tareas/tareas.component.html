@@ -1,0 +1,107 @@
+<BottomBar index="0">
+    
+    <MDFloatingActionButton 
+        style="background-image: url('res://add'); background-repeat: no-repeat; background-position: 50% 50%; "
+        class="fab-button button arrow "
+        (tap)="onfabTap('/home/detalletarea/nuevo')"
+        elevation="4" 
+        
+        src="res://add">
+        
+    </MDFloatingActionButton>
+    <GridLayout rows="250,*">
+        <StackLayout
+        row="0"
+        padding="10"
+        style="background-color:  #00ba40; background-repeat: no-repeat; background-position: center;"
+        >
+        <Label class="title" text=""></Label>
+        <Label class="title" text="" fontSize="15"></Label>
+        <StackLayout
+            android:height="60"
+            padding="10"
+            marginTop="5"
+            class="white-box"
+            >
+            <GridLayout columns="25, *, 25">
+                <Image
+                    col="0"
+                    horizontalAlignment="center"
+                    verticalAlignment="center"
+                    stretch="none"
+                    src="res://ic_search_violet"
+                ></Image>
+                <TextField
+                    col="1"
+                    marginLeft="10"
+                    hint="Busar Tareas"
+                    returnKeyType="done"
+                    (returnPress)="onReturnPress($event)"
+                    color="#78849E"
+                    backgroundColor="white"
+                ></TextField>
+                <Image
+                    horizontalAlignment="center"
+                    verticalAlignment="center"
+                    col="2"
+                    stretch="none"
+                    src="res://ic_filter"
+                ></Image>
+            </GridLayout>
+        </StackLayout>
+    </StackLayout>
+       
+        <RadListView  #listView row="1" [items]="data" pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)" >
+            <ng-template let-item="item">
+                    <CardView 
+                        margin="10" 
+                        backgroundColor="white" 
+                        elevation="20" 
+                        radius="5"
+                        (tap)="onNavigate(item)"
+                        >
+                        <StackLayout>
+                            
+                            <StackLayout padding="5">
+                                <Label
+                                    style="text-align: center; font-weight: bold; "
+                                    textWrap="true"
+                                    [text]="item.nombre"
+                                ></Label>
+                                <StackLayout class="line"></StackLayout>
+                                <Label
+                                    style="color: gray; font-size: 9;"
+                                    textWrap="true"
+                                    [text]="item.descripcion"
+                                ></Label>
+                            </StackLayout>
+                            
+                            <GridLayout dock="bottom" columns="*, *">
+                                <Button 
+                                    class="button-card button-one" 
+                                    col="0" 
+                                    (tap)="actualizarTarea(item)"
+                                    
+                                    text="Actualizar">
+                                </Button>
+                               
+                                <Button
+                                    (tap)="eliminarTarea(item)"
+                                    class="button-card button-three"
+                                    backgroundColor="red"
+                                    text="Eliminar"
+                                    col="1"
+                                ></Button>
+                            </GridLayout> 
+                        </StackLayout>
+                    </CardView>
+            </ng-template>
+            <ListViewStaggeredLayout 
+                tkListViewLayout
+                scrollDirection="Vertical" 
+                spanCount="2">
+
+            </ListViewStaggeredLayout>
+        </RadListView>
+    </GridLayout>
+</BottomBar>

@@ -1,0 +1,62 @@
+<GridLayout>
+    <GridLayout class="background">
+        <DockLayout style="padding: 25;">
+            <StackLayout dock="top">
+                <label class="title" marginTop='' style="text-align: center; " text="Iniciar sesión"></label>
+                <StackLayout marginTop="3%"   class="white-box">
+                    <Image style="margin-top: -180;" src="res://salad"></Image>
+                    <label class="title-login big" text="Bienvenido"></label>
+                    <label text="Nos encanta verte de nuevo" class="title-login small" ></label>
+                    <TextField hint="Correo electrónico" 
+                        style="margin-left: 10; margin-right: 10;"
+                        class="tf-gray user"
+                        type="email" 
+                        name="email" 
+                        [(ngModel)]= "usuario.email"
+                        required
+                        email
+                        keyboardType="email" 
+                        autocapitalizationType="none">
+                    </TextField>
+                    <TextField hint="Contraseña" 
+                        type="password" 
+                        name="password" 
+                        required
+                        minlength="6"
+                        [(ngModel)]= "usuario.password"
+                        style="margin-left: 10; margin-right: 10;"
+                        class="tf-gray password"
+                        secure="true"
+                        autocapitalizationType="none">
+                    </TextField>
+                    <Button 
+                        (tap)="onLogin()"
+                        clearHistory="true"
+                        style="margin-bottom: 15; margin-top: 2;" 
+                        class="button button-one arrow">
+                    </Button>
+                        
+                </StackLayout>
+            </StackLayout>
+            <GridLayout dock="bottom" columns="*,*">
+                <Button 
+                    class="button button-one" 
+                    col="0" 
+                    clearHistory="true"
+                    text="Iniciar sesión" 
+                    tap="" >
+                </Button>
+                <Button 
+                    
+                    class="button button-three"  
+                    backgroundColor="white" 
+                    col="1" 
+                    text="Crear cuenta" 
+                    nsRouterLink="register"
+                    tap="" >
+                </Button>
+            </GridLayout>
+        </DockLayout>
+    </GridLayout>
+</GridLayout>
+

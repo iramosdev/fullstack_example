@@ -1,0 +1,87 @@
+<BottomBar index="3">
+    <GridLayout rows="250, *">
+        <Image
+            height="250"
+            stretch="fill"
+            src="https://www.marketingdonut.co.uk/sites/default/files/what-should-you-include-professional-profile142825543.jpg"
+        >
+        </Image>
+        <CardView
+            margin="10"
+            marginTop="-120"
+            row="1"
+            radius="10"
+            ios:style="background-color: white;"
+        >
+            <StackLayout padding="15">
+                <StackLayout orientation="horizontal">
+                    <Label
+                        class="fa"
+                        text="&#xf2c0;"
+                        color="#454F63"
+                        marginRight="20"
+                        verticalAlignment="center"
+                    ></Label>
+                    <TextField
+                    required
+                    minlength="3"
+                    [(ngModel)]= "usuario.nombre"
+                        placeHolderColor="#454F63"
+                        hint="Nombre"
+                        backgroundColor="white"
+                    ></TextField>
+                </StackLayout>
+                <!-- <StackLayout class="line"></StackLayout> -->
+                <!-- <StackLayout marginTop="5%" orientation="horizontal">
+                    <Label
+                        class="fa"
+                        text="&#xf003;"
+                        color="#454F63"
+                        marginRight="20"
+                        verticalAlignment="center"
+                    ></Label>
+                    <TextField
+                        placeHolderColor="#454F63"
+                        hint="Correo electrónico"
+                        backgroundColor="white"
+                    ></TextField>
+                </StackLayout> -->
+                <StackLayout class="line"></StackLayout>
+                <StackLayout marginTop="5%" orientation="horizontal">
+                    <Label
+                        class="fa"
+                        text="&#xf13e;"
+                        color="#454F63"
+                        marginRight="20"
+                        verticalAlignment="center"
+                    ></Label>
+                    <TextField
+                        type="password" 
+                        name="password" 
+                        required
+                        minlength="6"
+                        [(ngModel)]= "usuario.password"
+                        secure="true"
+                        autocapitalizationType="none"
+                        placeHolderColor="#454F63"
+                        hint="Contraseña"
+                        backgroundColor="white"
+                    ></TextField>
+                </StackLayout>
+                <StackLayout class="line"></StackLayout>
+                <Button
+                    marginTop="10%"
+                    (tap)="actualizarPerfil()"
+                    class="button-outline green"
+                    text="Actualizar"
+                ></Button>
+                <Button
+                    (tap)="onLogout()"
+                    marginTop="10%"
+                    class="button-outline gray"
+                    text="Cerrar sesión"
+                ></Button>
+            </StackLayout>
+        </CardView>
+    </GridLayout>
+</BottomBar>

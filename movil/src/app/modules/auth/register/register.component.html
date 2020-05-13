@@ -1,0 +1,102 @@
+<GridLayout>
+    <GridLayout class="background"></GridLayout>
+    <DockLayout style="padding: 25;">
+        <StackLayout dock="top">
+            <Label 
+                class="title" 
+                text="Crear cuenta" 
+                textWrap="true">
+            </Label>
+            <StackLayout marginTop="3%" class="white-box">
+                <Label 
+                    text="Unete" 
+                    textWrap="true" 
+                    style="color: #00ba40; margin-top: 15;"
+                    class="title-login big"
+
+                ></Label>
+                <Label 
+                    class="title-login smal" 
+                    style="color: #00ba40;"
+                    text="Nos encantaría que seas parte de nosotros" 
+                    textWrap="true">
+                </Label>
+                <FlexboxLayout justifyContent="center" style="margin-bottom: 15; margin-top: 15;">
+                        <Button 
+                            (tap)="ongoogle()" 
+                            style="margin-right: 15%;" 
+                            class="button-outline google" 
+                            text="" 
+                            tap="" >
+                        </Button>
+                        <Button 
+                            (tap)="onfacebook()" 
+                            class="button-outline facebook" 
+                            text="" 
+                            tap="" >
+                        </Button>
+                </FlexboxLayout>
+                <label 
+                    style="color: #00ba40;"
+                    opacity="0.5"
+                    class="title-login smal" 
+                    text="Tenemos múltiples opciones para que te unas a nosotros">
+                </label>
+
+                <TextField hint="Nombre" 
+                    required
+                    minlength="3"
+                    [(ngModel)]= "usuario.nombre"
+                    style="margin-left: 10; margin-right: 10;"
+                    class="tf-gray user-green"
+                   >
+                </TextField>
+                <TextField hint="Correo electrónico" 
+                    style="margin-left: 10; margin-right: 10;"
+                    class="tf-gray user email-green"
+                    type="email" 
+                    name="email" 
+                    [(ngModel)]= "usuario.email"
+                    required
+                    email
+                    keyboardType="email" 
+                    autocapitalizationType="none">
+                </TextField>
+                <TextField hint="Contraseña" 
+                    type="password" 
+                    name="password" 
+                    required
+                    minlength="6"
+                    [(ngModel)]= "usuario.password"
+                    style="margin-left: 10; margin-right: 10;"
+                    class="tf-gray password-green "
+                    secure="true"
+                    autocapitalizationType="none">
+                </TextField>
+                <Button 
+                    (tap)="onRegistro()"
+                    style="margin-bottom: 15; margin-top: 2;" 
+                    class="button button-second arrow">
+                </Button>
+            </StackLayout>
+            <GridLayout dock="bottom" columns="*,*">
+                <Button 
+                    class="button button-three" 
+                    col="0" 
+                    clearHistory="true"
+                    text="Iniciar sesión" 
+                    nsRouterLink="/"
+                    tap="" >
+                </Button>
+                <Button 
+                    color="white"
+                    clearHistory="true"
+                    class="button button-second"  
+                    col="1" 
+                    text="Crear cuenta" 
+                    tap="" >
+                </Button>
+            </GridLayout>
+        </StackLayout>
+    </DockLayout>
+</GridLayout>

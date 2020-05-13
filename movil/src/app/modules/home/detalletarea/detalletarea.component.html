@@ -1,0 +1,78 @@
+<BottomBar index="0">
+    <GridLayout rows="250, *">
+        <Image
+            height="250"
+            stretch="fill"
+            src="https://www.marketingdonut.co.uk/sites/default/files/what-should-you-include-professional-profile142825543.jpg"
+        >
+        </Image>
+        <CardView
+            margin="10"
+            marginTop="-120"
+            row="1"
+            radius="10"
+            ios:style="background-color: white;"
+        >
+            <StackLayout padding="15">
+                <StackLayout orientation="horizontal">
+                    <Label
+                        class="fa"
+                        text="&#xf249;"
+                        color="#454F63"
+                        marginRight="20"
+                        verticalAlignment="center"
+                    ></Label>
+                    <TextField
+                        placeholder="Nombre de tarea"
+                        [(ngModel)]="tarea.nombre"
+                        name="nombre"
+                        required
+                        placeHolderColor="#454F63"
+                        hint="Titulo"
+                        backgroundColor="white"
+                    ></TextField>
+                </StackLayout>
+               
+                <StackLayout class="line"></StackLayout>
+                <StackLayout marginTop="5%" orientation="horizontal">
+                    <Label
+                        class="fa"
+                        text="&#xf044;"
+                        color="#454F63"
+                        marginRight="20"
+                        verticalAlignment="center"
+                    ></Label>
+                    <TextField
+                        [(ngModel)]="tarea.descripcion"
+                        name="descripcion"
+                        placeholder="Detalle de la tarea"
+                        placeHolderColor="#454F63"
+                        hint="Descripcion"
+                        backgroundColor="white"
+                    ></TextField>
+                </StackLayout>
+                <StackLayout class="line"></StackLayout>
+                <GridLayout dock="bottom" columns="*,*">
+                    <Button 
+                        class="button-outline green"
+                        text="Cancelar"
+                        col="0" 
+                        
+                        nsRouterLink="/home/tareas"
+                        marginTop="10%"
+                        margin="5"
+                        tap="" >
+                    </Button>
+                    <Button 
+                        marginTop="10%"
+                        col="1"
+                        (tap)="guardarNotas()"
+                        class="button-outline green"
+                        text="Guardar" >
+                </Button>
+                </GridLayout>
+               
+            </StackLayout>
+        </CardView>
+    </GridLayout>
+</BottomBar>
